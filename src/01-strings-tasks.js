@@ -18,8 +18,10 @@
  *   'aa',''    => 'aa'
  *   '',  'bb'  => 'bb'
  */
-function concatenateStrings(/* value1, value2 */) {
-  throw new Error('Not implemented');
+function concatenateStrings( value1, value2 ) {
+  // throw new Error('Not implemented');
+  let output = value1+value2
+  return output
 }
 
 
@@ -34,8 +36,10 @@ function concatenateStrings(/* value1, value2 */) {
  *   'b'     => 1
  *   ''      => 0
  */
-function getStringLength(/* value */) {
-  throw new Error('Not implemented');
+function getStringLength( value ) {
+  // throw new Error('Not implemented');
+  let output = value.length
+  return output
 }
 
 /**
@@ -51,8 +55,10 @@ function getStringLength(/* value */) {
  *   'John','Doe'      => 'Hello, John Doe!'
  *   'Chuck','Norris'  => 'Hello, Chuck Norris!'
  */
-function getStringFromTemplate(/* firstName, lastName */) {
-  throw new Error('Not implemented');
+function getStringFromTemplate( firstName, lastName ) {
+  // throw new Error('Not implemented');
+  let output = `Hello, ${firstName} ${lastName}!`
+  return output
 }
 
 /**
@@ -65,8 +71,10 @@ function getStringFromTemplate(/* firstName, lastName */) {
  *   'Hello, John Doe!' => 'John Doe'
  *   'Hello, Chuck Norris!' => 'Chuck Norris'
  */
-function extractNameFromTemplate(/* value */) {
-  throw new Error('Not implemented');
+function extractNameFromTemplate(value ) {
+  // throw new Error('Not implemented');
+  let output = value.slice(7, value.length-1)
+  return output
 }
 
 
@@ -80,8 +88,10 @@ function extractNameFromTemplate(/* value */) {
  *   'John Doe'  => 'J'
  *   'cat'       => 'c'
  */
-function getFirstChar(/* value */) {
-  throw new Error('Not implemented');
+function getFirstChar( value ) {
+  // throw new Error('Not implemented');
+  let output = value.slice(0,1)
+  return output
 }
 
 /**
@@ -95,8 +105,17 @@ function getFirstChar(/* value */) {
  *   'cat'              => 'cat'
  *   '\tHello, World! ' => 'Hello, World!'
  */
-function removeLeadingAndTrailingWhitespaces(/* value */) {
-  throw new Error('Not implemented');
+function removeLeadingAndTrailingWhitespaces( /*value*/ ) {
+  // throw new Error('Not implemented');
+  // let output
+  // if (value.startsWith('  ')) {
+  //   output = value.replace('  ','')
+  // }
+  // let output1 = value.replace('  ', '')
+  // let output2=value.replace('\t', '')
+  // let output3=value.replace(' ', '')
+  // // let output4=output.replace(' ','')
+  // return output, output1, output2, output3
 }
 
 /**
@@ -110,8 +129,14 @@ function removeLeadingAndTrailingWhitespaces(/* value */) {
  *   'A', 5  => 'AAAAA'
  *   'cat', 3 => 'catcatcat'
  */
-function repeatString(/* value, count */) {
-  throw new Error('Not implemented');
+function repeatString( value, count ) {
+  // throw new Error('Not implemented');
+  let arr = []
+  for(let i=0; i<count; i++) {
+    arr.push(i)
+  }
+  let filledArr = arr.fill(value).join('')
+  return filledArr
 }
 
 /**
@@ -141,8 +166,10 @@ function removeFirstOccurrences(/* str, value */) {
  *   '<span>' => 'span'
  *   '<a>' => 'a'
  */
-function unbracketTag(/* str */) {
-  throw new Error('Not implemented');
+function unbracketTag( str ) {
+  // throw new Error('Not implemented');
+  let output = str.replace('<', '').replace('>','')
+  return output
 }
 
 
@@ -156,8 +183,10 @@ function unbracketTag(/* str */) {
  *   'Thunderstruck' => 'THUNDERSTRUCK'
  *  'abcdefghijklmnopqrstuvwxyz' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
  */
-function convertToUpperCase(/* str */) {
-  throw new Error('Not implemented');
+function convertToUpperCase(str ) {
+  // throw new Error('Not implemented');
+  let output=str.toUpperCase()
+  return output
 }
 
 /**
