@@ -168,8 +168,10 @@ function parseNumberFromString( value ) {
  *   3,3,3   => 5.196152422706632
  *   1,2,3   => 3.741657386773941
  */
-function getParallelepipedDiagonal(/* a, b, c */) {
-  throw new Error('Not implemented');
+function getParallelepipedDiagonal( a, b, c ) {
+  // throw new Error('Not implemented');
+  let length = ((a**2+b**2+c**2))**(1/2)
+  return length
 }
 
 
@@ -190,8 +192,30 @@ function getParallelepipedDiagonal(/* a, b, c */) {
  *   1678, 2  => 1700
  *   1678, 3  => 2000
  */
-function roundToPowerOfTen(/* num, pow */) {
-  throw new Error('Not implemented');
+function roundToPowerOfTen( num, pow ) {
+  // throw new Error('Not implemented');
+  let arrFromStr = Array.from(String(num))
+  let shiftedChar = arrFromStr.slice(arrFromStr.length-pow)
+  let slicedArr = arrFromStr.slice(0, arrFromStr.length-pow)
+  console.log(slicedArr);
+  let output
+  if(pow==0) {
+    return num
+  }
+  if(shiftedChar[0]>=5){
+    output = slicedArr.map(el=>{
+      if(el==slicedArr[slicedArr.length-1]){
+        console.log(Number(el++));
+       return Number(el++)
+      }
+      return el
+    }
+    )
+  }else{
+   output = slicedArr
+  }
+  let outputNum=Number(String(output.join('')).padEnd(String(num).length, 0))
+  return outputNum
 }
 
 /**
