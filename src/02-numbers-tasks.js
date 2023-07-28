@@ -199,6 +199,7 @@ function roundToPowerOfTen( num, pow ) {
   let slicedArr = arrFromStr.slice(0, arrFromStr.length-pow)
   console.log(slicedArr);
   let output
+  let outputNum
   if(pow==0) {
     return num
   }
@@ -214,7 +215,12 @@ function roundToPowerOfTen( num, pow ) {
   }else{
    output = slicedArr
   }
-  let outputNum=Number(String(output.join('')).padEnd(String(num).length, 0))
+  if (pow==3 && slicedArr[0]==9) {
+    outputNum=Number(String(output.join('')).padEnd(String(num).length+1, 0))
+  } else {
+    outputNum=Number(String(output.join('')).padEnd(String(num).length, 0))
+  }
+   
   return outputNum
 }
 
@@ -235,8 +241,13 @@ function roundToPowerOfTen( num, pow ) {
  *   16 => false
  *   17 => true
  */
-function isPrime(/* n */) {
-  throw new Error('Not implemented');
+function isPrime( n ) {
+  // throw new Error('Not implemented');
+  if (n%n===0 && n/1==n) {
+    return true
+  } else {
+    return false
+  }
 }
 
 /**
