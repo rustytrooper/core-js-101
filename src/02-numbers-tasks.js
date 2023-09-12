@@ -7,7 +7,6 @@
  *                                                                                           *
  ******************************************************************************************* */
 
-
 /**
  * Returns an area of a rectangle given by width and height.
  *
@@ -19,12 +18,11 @@
  *   5, 10 => 50
  *   5, 5  => 25
  */
-function getRectangleArea( width, height ) {
+function getRectangleArea(width, height) {
   // throw new Error('Not implemented');
-  let output = width*height
-  return output
+  let output = width * height;
+  return output;
 }
-
 
 /**
  * Returns a circumference of circle given by radius.
@@ -37,10 +35,10 @@ function getRectangleArea( width, height ) {
  *   3.14 => 19.729201864543903
  *   0    => 0
  */
-function getCircleCircumference( radius ) {
+function getCircleCircumference(radius) {
   // throw new Error('Not implemented');
-  let length = 2*Math.PI*radius
-  return length
+  let length = 2 * Math.PI * radius;
+  return length;
 }
 
 /**
@@ -55,7 +53,7 @@ function getCircleCircumference( radius ) {
  *  10, 0  => 5
  *  -3, 3  => 0
  */
-function getAverage( value1, value2 ) {
+function getAverage(value1, value2) {
   // throw new Error('Not implemented');
   // let avera
 }
@@ -95,7 +93,6 @@ function getLinearEquationRoot(/* a, b */) {
   throw new Error('Not implemented');
 }
 
-
 /**
  * Returns an angle (in radians) between two vectors given by xi and yi,
  * coordinates in Cartesian plane.
@@ -130,12 +127,11 @@ function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
  *     5     => 5
  *     0     => 0
  */
-function getLastDigit( value ) {
+function getLastDigit(value) {
   // throw new Error('Not implemented');
-  let arr = Number(Array.from(String(value)).reverse().slice(0,1))
-  return arr
+  let arr = Number(Array.from(String(value)).reverse().slice(0, 1));
+  return arr;
 }
-
 
 /**
  * Returns a number by given string representation.
@@ -148,11 +144,10 @@ function getLastDigit( value ) {
  *     '37'     => 37
  * '-525.5'     => -525.5
  */
-function parseNumberFromString( value ) {
+function parseNumberFromString(value) {
   // throw new Error('Not implemented');
-  let numFromString = Number(value)
-  return numFromString
-
+  let numFromString = Number(value);
+  return numFromString;
 }
 
 /**
@@ -168,12 +163,11 @@ function parseNumberFromString( value ) {
  *   3,3,3   => 5.196152422706632
  *   1,2,3   => 3.741657386773941
  */
-function getParallelepipedDiagonal( a, b, c ) {
+function getParallelepipedDiagonal(a, b, c) {
   // throw new Error('Not implemented');
-  let length = ((a**2+b**2+c**2))**(1/2)
-  return length
+  let length = (a ** 2 + b ** 2 + c ** 2) ** (1 / 2);
+  return length;
 }
-
 
 /**
  * Returns the number rounded to specified power of 10.
@@ -192,36 +186,37 @@ function getParallelepipedDiagonal( a, b, c ) {
  *   1678, 2  => 1700
  *   1678, 3  => 2000
  */
-function roundToPowerOfTen( num, pow ) {
+function roundToPowerOfTen(num, pow) {
   // throw new Error('Not implemented');
-  let arrFromStr = Array.from(String(num))
-  let shiftedChar = arrFromStr.slice(arrFromStr.length-pow)
-  let slicedArr = arrFromStr.slice(0, arrFromStr.length-pow)
+  let arrFromStr = Array.from(String(num));
+  let shiftedChar = arrFromStr.slice(arrFromStr.length - pow);
+  let slicedArr = arrFromStr.slice(0, arrFromStr.length - pow);
   console.log(slicedArr);
-  let output
-  let outputNum
-  if(pow==0) {
-    return num
+  let output;
+  let outputNum;
+  if (pow == 0) {
+    return num;
   }
-  if(shiftedChar[0]>=5){
-    output = slicedArr.map(el=>{
-      if(el==slicedArr[slicedArr.length-1]){
+  if (shiftedChar[0] >= 5) {
+    output = slicedArr.map((el) => {
+      if (el == slicedArr[slicedArr.length - 1]) {
         console.log(Number(el++));
-       return Number(el++)
+        return Number(el++);
       }
-      return el
-    }
-    )
-  }else{
-   output = slicedArr
-  }
-  if (pow==3 && slicedArr[0]==9) {
-    outputNum=Number(String(output.join('')).padEnd(String(num).length+1, 0))
+      return el;
+    });
   } else {
-    outputNum=Number(String(output.join('')).padEnd(String(num).length, 0))
+    output = slicedArr;
   }
-   
-  return outputNum
+  if (pow == 3 && slicedArr[0] == 9) {
+    outputNum = Number(
+      String(output.join('')).padEnd(String(num).length + 1, 0)
+    );
+  } else {
+    outputNum = Number(String(output.join('')).padEnd(String(num).length, 0));
+  }
+
+  return outputNum;
 }
 
 /**
@@ -241,12 +236,12 @@ function roundToPowerOfTen( num, pow ) {
  *   16 => false
  *   17 => true
  */
-function isPrime( n ) {
+function isPrime(n) {
   // throw new Error('Not implemented');
-  if (n%n===0 && n/1==n) {
-    return true
+  if (n % n === 0 && n / 1 == n) {
+    return true;
   } else {
-    return false
+    return false;
   }
 }
 
