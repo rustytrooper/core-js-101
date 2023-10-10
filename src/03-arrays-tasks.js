@@ -22,7 +22,7 @@
 function findElement(arr, value) {
   // throw new Error('Not implemented');
   let output;
-  arr.map((el) => {
+  arr.map((/*el*/) => {
     if (arr.includes(value)) {
       output = arr.indexOf(value);
     } else {
@@ -45,7 +45,9 @@ function findElement(arr, value) {
  */
 function generateOdds(len) {
   // throw new Error('Not implemented');
-  const arr1 = [...Array(100).keys()].filter((el) => el % 2 != 0).slice(0, len);
+  const arr1 = [...Array(100).keys()]
+    .filter((el) => el % 2 !== 0)
+    .slice(0, len);
   return arr1;
 }
 
@@ -277,7 +279,7 @@ function getSecondItems(arr) {
   // throw new Error('Not implemented');
   const output = [];
   for (let i = 0; i < arr.length; i++) {
-    if (i % 2 != 0) {
+    if (i % 2 !== 0) {
       output.push(arr[i]);
     }
   }

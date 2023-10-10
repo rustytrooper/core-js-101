@@ -53,7 +53,7 @@ function getCircleCircumference(radius) {
  *  10, 0  => 5
  *  -3, 3  => 0
  */
-function getAverage(value1, value2) {
+function getAverage(/*value1, value2*/) {
   // throw new Error('Not implemented');
   // let avera
 }
@@ -191,16 +191,14 @@ function roundToPowerOfTen(num, pow) {
   const arrFromStr = Array.from(String(num));
   const shiftedChar = arrFromStr.slice(arrFromStr.length - pow);
   const slicedArr = arrFromStr.slice(0, arrFromStr.length - pow);
-  console.log(slicedArr);
   let output;
   let outputNum;
-  if (pow == 0) {
+  if (pow === 0) {
     return num;
   }
   if (shiftedChar[0] >= 5) {
     output = slicedArr.map((el) => {
-      if (el == slicedArr[slicedArr.length - 1]) {
-        console.log(Number(el++));
+      if (el === slicedArr[slicedArr.length - 1]) {
         return Number(el++);
       }
       return el;
@@ -208,9 +206,9 @@ function roundToPowerOfTen(num, pow) {
   } else {
     output = slicedArr;
   }
-  if (pow == 3 && slicedArr[0] == 9) {
+  if (pow === 3 && slicedArr[0] === 9) {
     outputNum = Number(
-      String(output.join('')).padEnd(String(num).length + 1, 0),
+      String(output.join('')).padEnd(String(num).length + 1, 0)
     );
   } else {
     outputNum = Number(String(output.join('')).padEnd(String(num).length, 0));
@@ -238,7 +236,7 @@ function roundToPowerOfTen(num, pow) {
  */
 function isPrime(n) {
   // throw new Error('Not implemented');
-  if (n % n === 0 && n / 1 == n) {
+  if (n % n === 0 && n / 1 === n) {
     return true;
   }
   return false;
