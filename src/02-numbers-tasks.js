@@ -20,7 +20,7 @@
  */
 function getRectangleArea(width, height) {
   // throw new Error('Not implemented');
-  let output = width * height;
+  const output = width * height;
   return output;
 }
 
@@ -37,7 +37,7 @@ function getRectangleArea(width, height) {
  */
 function getCircleCircumference(radius) {
   // throw new Error('Not implemented');
-  let length = 2 * Math.PI * radius;
+  const length = 2 * Math.PI * radius;
   return length;
 }
 
@@ -129,7 +129,7 @@ function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
  */
 function getLastDigit(value) {
   // throw new Error('Not implemented');
-  let arr = Number(Array.from(String(value)).reverse().slice(0, 1));
+  const arr = Number(Array.from(String(value)).reverse().slice(0, 1));
   return arr;
 }
 
@@ -146,7 +146,7 @@ function getLastDigit(value) {
  */
 function parseNumberFromString(value) {
   // throw new Error('Not implemented');
-  let numFromString = Number(value);
+  const numFromString = Number(value);
   return numFromString;
 }
 
@@ -165,7 +165,7 @@ function parseNumberFromString(value) {
  */
 function getParallelepipedDiagonal(a, b, c) {
   // throw new Error('Not implemented');
-  let length = (a ** 2 + b ** 2 + c ** 2) ** (1 / 2);
+  const length = (a ** 2 + b ** 2 + c ** 2) ** (1 / 2);
   return length;
 }
 
@@ -188,9 +188,9 @@ function getParallelepipedDiagonal(a, b, c) {
  */
 function roundToPowerOfTen(num, pow) {
   // throw new Error('Not implemented');
-  let arrFromStr = Array.from(String(num));
-  let shiftedChar = arrFromStr.slice(arrFromStr.length - pow);
-  let slicedArr = arrFromStr.slice(0, arrFromStr.length - pow);
+  const arrFromStr = Array.from(String(num));
+  const shiftedChar = arrFromStr.slice(arrFromStr.length - pow);
+  const slicedArr = arrFromStr.slice(0, arrFromStr.length - pow);
   console.log(slicedArr);
   let output;
   let outputNum;
@@ -210,7 +210,7 @@ function roundToPowerOfTen(num, pow) {
   }
   if (pow == 3 && slicedArr[0] == 9) {
     outputNum = Number(
-      String(output.join('')).padEnd(String(num).length + 1, 0)
+      String(output.join('')).padEnd(String(num).length + 1, 0),
     );
   } else {
     outputNum = Number(String(output.join('')).padEnd(String(num).length, 0));
@@ -240,9 +240,8 @@ function isPrime(n) {
   // throw new Error('Not implemented');
   if (n % n === 0 && n / 1 == n) {
     return true;
-  } else {
-    return false;
   }
+  return false;
 }
 
 /**
