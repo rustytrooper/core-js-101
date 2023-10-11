@@ -53,7 +53,7 @@ function getCircleCircumference(radius) {
  *  10, 0  => 5
  *  -3, 3  => 0
  */
-function getAverage(/*value1, value2*/) {
+function getAverage() {
   // throw new Error('Not implemented');
   // let avera
 }
@@ -199,7 +199,7 @@ function roundToPowerOfTen(num, pow) {
   if (shiftedChar[0] >= 5) {
     output = slicedArr.map((el) => {
       if (el === slicedArr[slicedArr.length - 1]) {
-        return Number(el++);
+        // return Number(el=el+1);
       }
       return el;
     });
@@ -208,7 +208,7 @@ function roundToPowerOfTen(num, pow) {
   }
   if (pow === 3 && slicedArr[0] === 9) {
     outputNum = Number(
-      String(output.join('')).padEnd(String(num).length + 1, 0)
+      String(output.join('')).padEnd(String(num).length + 1, 0),
     );
   } else {
     outputNum = Number(String(output.join('')).padEnd(String(num).length, 0));

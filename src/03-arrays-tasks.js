@@ -22,12 +22,13 @@
 function findElement(arr, value) {
   // throw new Error('Not implemented');
   let output;
-  arr.map((/*el*/) => {
+  arr.map((el) => {
     if (arr.includes(value)) {
       output = arr.indexOf(value);
     } else {
       output = -1;
     }
+    return el;
   });
   return output;
 }
@@ -122,6 +123,7 @@ function removeFalsyValues(arr) {
     if (el) {
       return el;
     }
+    return el;
   });
   return outputArr;
 }
@@ -278,7 +280,7 @@ function getMovingSum(/* arr */) {
 function getSecondItems(arr) {
   // throw new Error('Not implemented');
   const output = [];
-  for (let i = 0; i < arr.length; i++) {
+  for (let i = 0; i < arr.length; i += 1) {
     if (i % 2 !== 0) {
       output.push(arr[i]);
     }
