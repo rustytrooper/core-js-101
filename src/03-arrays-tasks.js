@@ -229,7 +229,7 @@ function getTail(arr, n) {
  */
 function toCsvText(arr) {
   // throw new Error('Not implemented');
-  const output = arr.map((el) => `${String(el)}\n+`);
+  const output = arr.map((el) => `${String(el)}\n++`);
   return String(output);
 }
 
@@ -244,8 +244,9 @@ function toCsvText(arr) {
  *   [ 0, 1, 2, 3, 4, 5 ] => [ 0, 1, 4, 9, 16, 25 ]
  *   [ 10, 100, -1 ]      => [ 100, 10000, 1 ]
  */
-function toArrayOfSquares(/* arr */) {
-  throw new Error('Not implemented');
+function toArrayOfSquares(arr) {
+  // throw new Error('Not implemented');
+  return arr.map((el) => el * el);
 }
 
 /**
@@ -319,8 +320,9 @@ function propagateItemsByPositionIndex(/* arr */) {
  *   [ 1,2,3,4,5,6,7,8,9,10 ] => [ 10, 9, 8 ]
  *   [ 10, 10, 10, 10 ] => [ 10, 10, 10 ]
  */
-function get3TopItems(/* arr */) {
-  throw new Error('Not implemented');
+function get3TopItems(arr) {
+  // throw new Error('Not implemented');
+  return arr.sort((a, b) => b - a).slice(0, 3);
 }
 
 /**
@@ -418,8 +420,9 @@ function findAllOccurrences(/* arr, item */) {
  *    [1, 2, 3, 4, 5]                   => '1,2,3,4,5'
  *    ['rock', 'paper', 'scissors']     => 'rock,paper,scissors'
  */
-function toStringList(/* arr */) {
-  throw new Error('Not implemented');
+function toStringList(arr) {
+  // throw new Error('Not implemented');
+  return arr.toString();
 }
 
 /**
@@ -448,8 +451,20 @@ function toStringList(/* arr */) {
  *      { country: 'Russia',  city: 'Saint Petersburg' }
  *    ]
  */
-function sortCitiesArray(/* arr */) {
-  throw new Error('Not implemented');
+function sortCitiesArray(arr) {
+  // throw new Error('Not implemented');
+  const country = arr.sort((country1, country2) => {
+    if (country1.country < country2.country) {
+      return -1;
+    }
+    return arr;
+  });
+  return country.sort((city1, city2) => {
+    if (city1.country === city2.country && city1.city < city2.city) {
+      return -1;
+    }
+    return arr;
+  });
 }
 
 /**
@@ -487,8 +502,31 @@ function getIdentityMatrix(/* n */) {
  *     0, 100 => [ 0, 1, 2, ..., 100 ]
  *     3, 3   => [ 3 ]
  */
-function getIntervalArray(/* start, end */) {
-  throw new Error('Not implemented');
+function getIntervalArray(start, end) {
+  // throw new Error('Not implemented');
+  let output;
+  if (start < 0) {
+    const left = Math.abs(start) + 1;
+    const arrayNegative = [...Array(left).keys()].reverse().map((el) => {
+      if (el > 0) {
+        return -el;
+      }
+      return el;
+    });
+    const arrayPositive = [...Array(end + 1).keys()];
+    const arrslice = arrayPositive.slice(1, arrayPositive.length);
+    output = arrayNegative.concat(arrslice);
+  } else if (start === 0) {
+    output = [...Array(end + 1).keys()];
+  } else if (start === end) {
+    const num = Number(start);
+    const arr = [];
+    arr.push(num);
+    output = arr;
+  } else if (start > 0) {
+    output = [...Array(end).keys()].map((el) => el + 1);
+  }
+  return output;
 }
 
 /**
